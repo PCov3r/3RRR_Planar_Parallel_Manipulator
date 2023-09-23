@@ -1,7 +1,7 @@
 %% This function is an implementation of the inverse kinematics solution
 %% It returns theta1 theta2 and theta3 using the robot position x y and orientation alpha
 
-function th = ikm(param,x,y,alpha)
+function [th1,th2,th3] = ikm(param,x,y,alpha)
 % kinematic parameters
 K = param(1);
 l1 = param(2);
@@ -25,7 +25,9 @@ thp = 2*atan((-c+sqrt(c.^2+b.^2-a.^2)) ./ (a-b));
 % obtain the elbow-down solutions
 thm = 2*atan((-c-sqrt(c.^2+b.^2-a.^2)) ./ (a-b));
 
-% arrange answer in the form [th1_up,th1_down,th2up,th2_down...]
-th = reshape([thp;thm], size(thp,1), []);
+% order output
+th1 = [thp(1),thm(1)];
+th2 = [thp(2),thm(2)];
+th3 = [thp(3),thm(3)];
 
 end
