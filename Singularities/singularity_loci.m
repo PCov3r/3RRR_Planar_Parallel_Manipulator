@@ -47,14 +47,12 @@ detJth = detJth/Mth;
 
 % Plot the final singularity loci
 figure
-test = imagesc(abs(squeeze(detJx(1,:,:))));
+imagesc([-210,210],[-210,210],abs(squeeze(detJx(1,:,:))));
 axis image
 c = colorbar();
 c.Label.String = 'Absolute value of det(Jx) (normalized)';
 set(gca,'YDir','normal') 
 title('Direct (type II) singularity contours')
-set(gca, 'XTick', linspace(10*nb_points/840,nb_points-10*nb_points/840,9), 'XTickLabel', linspace(-200,200,9)); % 10 ticks 
-set(gca, 'YTick', linspace(10*nb_points/840,nb_points-10*nb_points/840,9), 'YTickLabel', linspace(-200,200,9)); % 20 ticks
 xlabel('x (mm)')
 ylabel('y (mm)')
 
