@@ -26,8 +26,8 @@ thp = 2*atan((-c+sqrt(c.^2+b.^2-a.^2)) ./ (a-b));
 thm = 2*atan((-c-sqrt(c.^2+b.^2-a.^2)) ./ (a-b));
 
 % order output
-th1 = [thp(1),thm(1)];
-th2 = [thp(2),thm(2)];
-th3 = [thp(3),thm(3)];
+th1 = [thp(1);thm(1)];
+th2 = [thp(2);thm(2)];
+th3 = [thp(3);thm(3)];
 
 end
