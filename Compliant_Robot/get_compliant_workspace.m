@@ -93,14 +93,16 @@ k = boundary(coord3(1,:)',coord3(2,:)');
 wrkspace3 = polyshape(coord3(1,k),coord3(2,k));
 
 % obtain workspace from intersection
-figure
-hold on
-plot(wrkspace1)
-plot(wrkspace2)
-plot(wrkspace3)
-hold off
-legend('1st','2nd','3rd')
-axis equal
+% uncomment following line to plot the kinematic chains
+% figure
+% hold on
+% plot(wrkspace1)
+% plot(wrkspace2)
+% plot(wrkspace3)
+% hold off
+% legend('1st kinematic chain','2nd kinematic chain','3rd kinematic chain')
+% axis equal
+
 comp_workspace = intersect([wrkspace1,wrkspace2,wrkspace3]);
 
 end
