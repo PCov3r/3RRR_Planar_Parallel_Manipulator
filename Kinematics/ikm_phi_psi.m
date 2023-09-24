@@ -8,9 +8,9 @@ l2=param(3);
 R=param(4);
 
 % theta123
-th1 = theta(1);
-th2 = theta(2);
-th3 = theta(3);
+th1 = theta(:,1);
+th2 = theta(:,2);
+th3 = theta(:,3);
     
 % actuator position
 xA=K*cos(pi/6);
@@ -32,6 +32,6 @@ ph3 = atan2(sph3,cph3);
 % solve for psi
 psi1 = pi-ph1+pi/6+alpha;
 psi2 = pi-ph2+5*pi/6+alpha;
-psi3 = pi-ph3+pi/2+alpha;
+psi3 = pi-ph3+3*pi/2+alpha;
 
 end
