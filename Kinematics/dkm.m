@@ -1,4 +1,4 @@
-function [x,y,alpha] = dkm2(param, th1,th2,th3)
+function [x,y,alpha] = dkm(param, th1,th2,th3)
 % kinematic parameters
 K = param(1);
 l1 = param(2);
@@ -66,6 +66,5 @@ phi3 = atan2(sphi3,cphi3);
 % obtain x and y using third kinematic chain equations
 x = l1*cos(th3)+l2*cos(phi3)-R*cos(alpha+pi/2);
 y = K+l1*sin(th3)+l2*sin(phi3)-R*sin(alpha+pi/2);
-
 
 end
