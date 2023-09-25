@@ -1,3 +1,10 @@
+%% This function outputs the compliant workspace based on the geometry-based method.
+% param: kinematic parameters
+% limit: joint limitation (radians)
+% home_pos: compliant robot home position
+% mode: compliant robot initial working mode
+% orientation: platform's orientation
+
 function [comp_workspace] = get_compliant_workspace(param, limit, home_pos, mode, orientation)
 
 % home position
@@ -36,7 +43,7 @@ phi(idx) = [];
 coord1 = [];
 for t=theta
     for p=phi
-        coord1 = [coord1,get_coord(param,t,p,alphaini,2*pi/3)];
+        coord1 = [coord1,get_coord(param,t,p,alphaini+orientation,2*pi/3)];
     end
 end
 
@@ -56,7 +63,7 @@ phi(idx) = [];
 coord2 = [];
 for t=theta
     for p=phi
-        coord2 = [coord2,get_coord(param,t,p,alphaini,-2*pi/3)];
+        coord2 = [coord2,get_coord(param,t,p,alphaini+orientation,-2*pi/3)];
     end
 end
 
@@ -76,7 +83,7 @@ phi(idx) = [];
 coord3 = [];
 for t=theta
     for p=phi
-        coord3 = [coord3,get_coord(param,t,p,alphaini,0)];
+        coord3 = [coord3,get_coord(param,t,p,alphaini+orientation,0)];
     end
 end
 
