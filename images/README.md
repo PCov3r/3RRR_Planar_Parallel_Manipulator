@@ -1,1 +1,1 @@
-This folder contains the the kinematic model of our robot.
+This folder contains the kinematic model of our robot.
